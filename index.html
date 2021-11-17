@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="imgs/favicon.png">
   </head>
   <body>
-    <div id="cabecalho">
+    <section id="cabecalho">
       <h1>Blog Assombrado</h1>
       <h2>Notícias e reportagens sobre o desconhecido</h2>
       <div id="menu-de-navegacao">
@@ -26,7 +26,7 @@
     <!-- OBS: não remova a class="desaparecido" porque ela está sendo usada pra
          esconder este elemento até o vídeo acabar (tem uma regra CSS para
          ocultar quem tem .desaparecido)-->
-    <div id="conteudo-principal" class="desaparecido">
+    <section id="conteudo-principal" class="desaparecido">
       <!-- opa, <section> já é um elemento semântico. Dica: podemos
            dividir a página em 3 seções, e esta é uma delas -->
       <div id="tags">
@@ -96,9 +96,9 @@
           </h2>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div id="rodape">
+    <section id="rodape">
       <img class="logo-rodape" src="imgs/logo-assombrado.png" alt="Logo do canal do Youtube Assombrado composto por uma letra A dentro de um círculo e os dizeres 'O desconhecido levado a sério'">
       <div>
         <p class="texto-rodape">
@@ -108,9 +108,16 @@
           <a href="http://assombrado.com.br" target="_blank">AssombradO.com.br</a>
         </p>
         <div id="inscreva-se">
+          <h3>Inscreva-se</h3>
+          <div>
+            <label>Email: <input id="email" type="email"></label>
+            <label>Nome: <input id="nome" type="text"></label>
+            <label><input id="email" type="checkbox">Aceito promoções </label>
+            <button type="submit">Inscrever</button>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- não remova a class="backdrop" porque ela está sendo usada para
          estilizar este elemento no CSS e usada também no JavaScript para ocultar
@@ -122,7 +129,7 @@
 
     <script>
       // faz o vídeo desaparecer de leve assim que terminar
-      const TEMPO = 11000;  // 11s, duração do vídeo
+      const TEMPO = 3000;  // 11s, duração do vídeo
       setTimeout(() => {
         // faz o vídeo desaparecer colocando a classe .desaparecido
         document.querySelector('.backdrop').classList.add('desaparecido');
@@ -137,5 +144,6 @@
         e.currentTarget.classList.add('desaparecido');
       });
     </script>
+    <script type="javascript" src="boos.js"></script>
   </body>
 </html>

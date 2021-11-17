@@ -51,6 +51,10 @@ a:active {
 
 #cabecalho ul {
   background-color: rgba(0, 204, 147, 0.53);
+  display: flex;
+  padding: 10px 100px;
+  justify-content: space-around;
+  list-style-type: none;
 }
 
 #cabecalho a {
@@ -89,10 +93,21 @@ a:active {
   margin-left: 2.5%;
   margin-right: 2.5%;
   display: inline-block;
+  position: relative;
 }
 
 #posts-principais .post .titulo {
   text-shadow: 1px 1px black;
+  position: absolute;
+  top: 6px;
+  opacity: 0;
+  background-color: rgba(255,255,255, 0.5);
+}
+
+#posts-principais .post .titulo:hover {
+  top: 27px;
+  opacity: 1;
+  transition: 0.4s;
 }
 
 #posts-principais .post img {
@@ -103,6 +118,14 @@ a:active {
   margin-bottom: .5em;
 }
 
+.post::before {
+  content: "Novidade!";
+  display: inline-block;
+  background: purple;
+  padding: 3px;
+  border-radius: 5px;
+}
+
 
 
 
@@ -110,11 +133,14 @@ a:active {
 #ultimas-postagens {
   margin-top: 3em;
   margin-bottom: 1em;
+  justify-items: le;
 }
 
 #ultimas-postagens .post {
   margin-top: 1em;
   margin-bottom: 1em;
+  display: flex;
+  justify-content: left;
 }
 
 #ultimas-postagens .post .data-horario {
@@ -147,11 +173,23 @@ a:active {
   background-size: 300px;
   box-shadow: -4px 0 10px rgba(0, 0, 0, 0.5);
   text-align: center;
+  box-sizing: border-box;
+  position: sticky;
 }
 
 #tags h1 {
   margin-bottom: 1em;
   text-shadow: 2px 2px #000;
+}
+
+#tags > span:active {
+  position: relative;
+  top: -2px;
+  left: -2px;
+}
+
+#tags > span:hover {
+  cursor: pointer;
 }
 
 .tag-1,
@@ -258,4 +296,15 @@ a:active {
   color: black;
   border-color: currentColor;
   box-shadow: none;
+}
+
+
+#inscreva-se > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+#inscreva-se > h3 {
+  justify-self: left;
+  width: fit-content;
 }
